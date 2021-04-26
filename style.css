@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #4158d0;
+  background-image: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
+  font-family: "Ubuntu", sans-serif;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  font-family: "Pacifico", cursive;
+  margin-top: 5vh;
+  text-shadow: 2px 6px #0000000c;
+  font-size: 3rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  height: 40vh;
+  width: 70vh;
+  margin-top: 2vh;
+  border-radius: 5px;
+  box-shadow: 15px 15px 15px 5px #00000050;
+  transition: 0.4s all;
+}
+
+.todo-input {
+  width: 90%;
+  height: 70%;
+  padding: 20px;
+  font-size: 1.5rem;
+}
+
+.todo-button {
+  cursor: pointer;
+  align-self: flex-end;
+  margin-right: 3.5vh;
+  margin-top: 2vh;
+  background-color: #c850c0;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  font-weight: bold;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70vh;
+  min-height: 10vh;
+  margin: 10px 0px;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.507);
+  list-style: none;
+  border-radius: 5px;
+  box-shadow: 15px 15px 15px 5px #00000050;
+  padding: 40px;
+  font-size: 1.5rem;
+  word-break: break-all;
+  transition: 0.4s all ease;
+  opacity: 0.95;
+}
+
+.trash-btn {
+  cursor: pointer;
+  background-color: #c850c0;
+  margin-right: 0vh;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 20px;
+}
+
+.delete {
+  opacity: 0;
+}
+
+.fa-trash {
+  pointer-events: none;
+}
