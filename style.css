@@ -23,6 +23,7 @@ body {
   margin-top: 5vh;
   text-shadow: 2px 6px #0000000c;
   font-size: 3rem;
+  text-align: center;
 }
 
 form {
@@ -58,6 +59,13 @@ form {
   font-weight: bold;
 }
 
+.todo-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
 .todo {
   display: flex;
   justify-content: space-between;
@@ -77,10 +85,13 @@ form {
   opacity: 0.95;
 }
 
+.todo:first-child {
+  margin-top: 20px;
+}
+
 .trash-btn {
   cursor: pointer;
   background-color: #c850c0;
-  margin-right: 0vh;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -93,4 +104,27 @@ form {
 
 .fa-trash {
   pointer-events: none;
+}
+
+@media (max-width: 700px) {
+  .logo {
+    font-size: 1.75rem;
+    margin-top: 2vh;
+  }
+  form {
+    width: 95%;
+  }
+  .todo-input {
+    font-size: 1.25rem;
+  }
+  .todo-button {
+    margin-right: 5%;
+  }
+  .todo {
+    /* max-width: 360px; */
+    width: 95%;
+    margin: 10px 2.5%;
+    font-size: 1.25rem;
+    /* padding: 40px 20px; */
+  }
 }
