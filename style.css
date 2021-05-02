@@ -112,7 +112,7 @@ form {
     margin-top: 2vh;
   }
   form {
-    width: 95%;
+    width: 95vw;
   }
   .todo-input {
     font-size: 1.25rem;
@@ -121,7 +121,8 @@ form {
     margin-right: 5%;
   }
   .todo {
-    /* max-width: 360px; */
+    min-width: 95vw;
+    min-height: 10vh;
     width: 95%;
     margin: 10px 2.5%;
     font-size: 1.25rem;
