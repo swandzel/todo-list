@@ -1,11 +1,10 @@
 const todoInput = document.querySelector(".todo-input");
 const todoButton = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-list");
+let todos = [];
 todoButton.addEventListener("click", addTodo);
 todoList.addEventListener("click", deletedTodo);
 document.addEventListener("DOMContentLoaded", getTodos);
-
-// FUNKCJA DODAJĄCA NOWE TODO
 
 function addTodo(event) {
   event.preventDefault();
@@ -38,12 +37,10 @@ function deletedTodo(event) {
     todo.classList.add("delete");
     todo.addEventListener("transitionend", () => todo.remove());
     removeLocalTodos(todo);
-    // todo.remove();
   }
 }
 
 function saveLocalTodos(todo) {
-  let todos = [];
   todos = JSON.parse(localStorage.getItem("todos"));
   todos.push(todo);
   localStorage.setItem("todos", JSON.stringify(todos));
@@ -57,7 +54,6 @@ function getTodos() {
 }
 
 function removeLocalTodos(todo) {
-  let todos = [];
   todos = JSON.parse(localStorage.getItem("todos"));
   const todoIndex = todo.children[0].innerText;
   todos.splice(todos.indexOf(todoIndex), 1);
