@@ -1,7 +1,6 @@
 const todoInput = document.querySelector(".todo-input");
 const todoButton = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-list");
-let todos = [];
 todoButton.addEventListener("click", addTodo);
 todoList.addEventListener("click", deletedTodo);
 document.addEventListener("DOMContentLoaded", getTodos);
@@ -41,20 +40,34 @@ function deletedTodo(event) {
 }
 
 function saveLocalTodos(todo) {
-  todos = JSON.parse(localStorage.getItem("todos"));
+  let todos;
+  if (localStorage.getItem("todos") === null) {
+    todos = [];
+  } else {
+    todos = JSON.parse(localStorage.getItem("todos"));
+  }
   todos.push(todo);
   localStorage.setItem("todos", JSON.stringify(todos));
 }
 
 function getTodos() {
-  todos = JSON.parse(localStorage.getItem("todos"));
+  if (localStorage.getItem("todos") === null) {
+    todos = [];
+  } else {
+    todos = JSON.parse(localStorage.getItem("todos"));
+  }
   todos.forEach(function (todo) {
     createTodo(todo);
   });
 }
 
 function removeLocalTodos(todo) {
-  todos = JSON.parse(localStorage.getItem("todos"));
+  let todos;
+  if (localStorage.getItem("todos") === null) {
+    todos = [];
+  } else {
+    todos = JSON.parse(localStorage.getItem("todos"));
+  }
   const todoIndex = todo.children[0].innerText;
   todos.splice(todos.indexOf(todoIndex), 1);
   localStorage.setItem("todos", JSON.stringify(todos));
